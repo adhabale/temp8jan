@@ -1,0 +1,17 @@
+<p>
+  dialog works!
+</p>
+<h1 mat-dialog-title>Delegate/Reasign</h1>
+<div mat-dialog-content>
+	<p>Select People</p>
+	<mat-form-field class="sub-input-control cust-90">
+		<mat-select placeholder="Workstream" [disableRipple]="true" [(ngModel)]="workstream" name="workstream">
+			<mat-option>None</mat-option>
+			<mat-option *ngFor="let workstream of workstreams" [value]="workstream">{{workstream}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+</div>
+<div mat-dialog-actions>
+	<button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+</div>
